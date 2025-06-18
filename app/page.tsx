@@ -1,103 +1,119 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="bg-[#FAFDF3] text-[#1D1F1E]">
+      {/* Hero Section */}
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="flex flex-col items-center text-center px-6 pt-12 pb-20 sm:px-8 sm:pt-16 sm:pb-24"
+      >
+        <p className="max-w-md text-sm mb-3 sm:text-base">
+          Transform your skincare routine with premium products that restore,
+          protect, and enhance your natural glow every day.
+        </p>
+        <h1 className="text-4xl font-bold leading-tight mb-4 sm:text-5xl">
+          GLOW<br />NATURALLY
+        </h1>
+        <div className="relative w-64 h-80 mb-6 sm:w-80 sm:h-96">
+          <Image
+            src="/images/women1.png"
+            alt="Hero"
+            layout="fill"
+            objectFit="cover"
+            className="rounded-lg"
+          />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+        <button className="bg-black text-white px-5 py-2 rounded-full text-sm sm:px-6 sm:py-3 sm:text-base">
+          Shop Now
+        </button>
+      </motion.section>
+
+      {/* About Section */}
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="px-6 py-10 text-center sm:px-8 sm:py-16"
+      >
+        <h2 className="text-2xl font-semibold mb-4 sm:text-3xl">
+          Your Skin Deserves the Best Care
+        </h2>
+        <ul className="text-left max-w-xl mx-auto space-y-4 sm:text-lg">
+          <li><strong>01 Bio Ingredients</strong> – Healthy, radiant skin powered by nature.</li>
+          <li><strong>02 Everything Natural</strong> – Perfect for your unique needs.</li>
+          <li><strong>03 All Handmade</strong> – Pure care, pure glow.</li>
+        </ul>
+      </motion.section>
+
+      {/* Product Section */}
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="px-6 py-10 sm:px-8 sm:py-16"
+      >
+        <h3 className="text-center text-xl font-medium mb-8 sm:text-2xl">
+          Best Selling Products
+        </h3>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <ProductCard img="/images/women4.png" title="ALYA SKIN CLEANSER" price="$20.00" />
+          <ProductCard img="/images/women5.png" title="RITUAL OF SAKURA" price="$14.99" />
+          <ProductCard img="/images/women6.png" title="THE BODY LOTION" price="$18.99" />
+        </div>
+      </motion.section>
+
+      {/* FAQ Section */}
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="px-6 py-10 sm:px-8 sm:py-16"
+      >
+        <h4 className="text-xl font-medium text-center mb-6 sm:text-2xl">
+          Answers to Your Skincare Questions
+        </h4>
+        <div className="max-w-xl mx-auto space-y-4 sm:text-lg">
+          <FAQItem q="Are your products safe for sensitive skin?" />
+          <FAQItem q="Are your products cruelty-free?" />
+          <FAQItem q="What’s your return policy?" />
+          <FAQItem q="Do you ship internationally?" />
+        </div>
+      </motion.section>
+
+      {/* Footer */}
+      <footer className="bg-[#1D1F1E] text-white text-center py-6 mt-10 sm:py-8">
+        <p>Join The Skincare Community Now.</p>
+        <p className="mt-2">Get in Touch: contact.skincare.com</p>
       </footer>
+    </main>
+  );
+}
+
+function ProductCard({ img, title, price }: { img: string; title: string; price: string }) {
+  return (
+    <div className="bg-white p-4 rounded-xl shadow text-center">
+      <div className="relative w-full h-64 mb-4">
+        <Image src={img} alt={title} layout="fill" objectFit="contain" className="rounded-lg" />
+      </div>
+      <h5 className="font-semibold mb-1">{title}</h5>
+      <p className="text-sm text-gray-500">From {price}</p>
+    </div>
+  );
+}
+
+function FAQItem({ q }: { q: string }) {
+  return (
+    <div className="border-b pb-2">
+      <p className="font-medium">+ {q}</p>
     </div>
   );
 }
